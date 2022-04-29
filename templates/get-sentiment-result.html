@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twitter API APP</title>
     <style>
@@ -54,17 +53,24 @@
       }
     </style>
   </head>
+
   <body>
     <nav class="nav">
       <div class="container">
         <div class="navlinks">
           <ul>
-            <li><a href="https://themaxk.github.io/index">About</a></li>
+            <!-- <li><a href="https://themaxk.github.io/index">About</a></li>
             <li><a href="https://themaxk.github.io/get-tweets-form">Find Tweets</a></li>
             <li>
               <a href="https://themaxk.github.io/get-sentiment-form">Sentiment Analysis</a>
             </li>
-            <li><a href="https://themaxk.github.io/get-histogram-form">Histogram</a></li>
+            <li><a href="https://themaxk.github.io/get-histogram-form">Histogram</a></li> -->
+            <li><a href="{{ url_for('index')}}">About</a></li>
+            <li><a href="{{ url_for('get_tweets')}}">Find Tweets</a></li>
+            <li>
+              <a href="{{ url_for('get_sentiment')}}">Sentiment Analysis</a>
+            </li>
+            <li><a href="{{ url_for('get_histogram')}}">Histogram</a></li>
           </ul>
         </div>
       </div>
@@ -74,47 +80,30 @@
     <br />
 
     <div id="box">
-      <h3>Please enter the required data</h3>
-      <br />
-      <br />
-      <form method="POST">
-       
-        <p>Enter Username 1: <input type="text" name="username1" id="" /></p>
-        <br />
-
-        <p>Enter Username 2: <input type="text" name="username2" id="" /></p>
-        <br />
-
-        <!-- <p>Enter Username 3: <input type="text" name="username3" id="" /></p> -->
-
-        
-        <br />
-        <br />
-        <p>
-          Keyword:
-          <input type="text" name="keyword" value="" />
-        </p>
+      <p>Sentiment Analysis: 
+        <br>
+        <!-- <b>{{ usernames }} </b> -->
+        <br>
       
-
-        <!-- <p>
-          Number of Results:
-          <input type="number" name="result" value="" />
-        </p> -->
-        <br />
-        <br />
-        <p>
-          Retweets:
-          <input type="checkbox" name="retweet" />
-          Replies:
-          <input type="checkbox" name="reply" />
-        </p>
-        <br />
-        <p>
-          <input type="submit" value="Get Histogram" />
-        </p>
-        <br />
-        <br />
-      </form>
+        <!-- <b>{{start_time}}</b> -->
+        <br>
+        <!-- <b>{{end_time}}</b> -->
+        <br>
+        <!-- <b>{{keyword}}</b> -->
+        <br>
+        <!-- <b>{{retweet}}</b> -->
+        <br>
+        <!-- <b>{{reply}}</b> -->
+        <br>
+        <!-- <b>{{new_query}}</b> -->
+        <br>
+        <b>{{plot}}</b>
+      </p>
+      <br>
+      <br>
+      <p>Want to input something else?</p>
+      <br>
+      <a href="https://themaxk.github.io/get-sentiment-form">Sentiment Analysis</a>
     </div>
   </body>
 </html>

@@ -59,12 +59,18 @@
       <div class="container">
         <div class="navlinks">
           <ul>
-            <li><a href="https://themaxk.github.io/index">About</a></li>
+            <!-- <li><a href="https://themaxk.github.io/index">About</a></li>
             <li><a href="https://themaxk.github.io/get-tweets-form">Find Tweets</a></li>
             <li>
               <a href="https://themaxk.github.io/get-sentiment-form">Sentiment Analysis</a>
             </li>
-            <li><a href="https://themaxk.github.io/get-histogram-form">Histogram</a></li>
+            <li><a href="https://themaxk.github.io/get-histogram-form">Histogram</a></li> -->
+            <li><a href="{{ url_for('index')}}">About</a></li>
+            <li><a href="{{ url_for('get_tweets')}}">Find Tweets</a></li>
+            <li>
+              <a href="{{ url_for('get_sentiment')}}">Sentiment Analysis</a>
+            </li>
+            <li><a href="{{ url_for('get_histogram')}}">Histogram</a></li>
           </ul>
         </div>
       </div>
@@ -79,34 +85,20 @@
       <br />
       <form method="POST">
        
-        <p>Enter Username: <input type="text" name="username1" id="" /></p>
-        <!-- <p>Enter Username 2: <input type="text" name="username2" id="" /></p> -->
+        <p>Enter Username 1: <input type="text" name="username1" id="" /></p>
+        <br />
+        <p>Enter Username 2: <input type="text" name="username2" id="" /></p>
+        <br />
+        <!-- <p>Enter Username 3: <input type="text" name="username3" id="" /></p> -->
 
-        <br />
-        <br />
+        
 
         <!-- <p>
-          Start Date:
-          <input
-            type="date"
-            id="start"
-            name="start-date"
-            value="2022-04-24"
-            min="2022-04-24"
-            max="2022-04-28"
-          />
-
-          End Date:
-          <input
-            type="date"
-            id="start"
-            name="end-date"
-            value="2022-04-29"
-            min="2022-04-24"
-            max="2022-04-29"
-          />
+          Number of Results:
+          <input type="number" name="result" value="" />
         </p> -->
         <br />
+
         <br />
         <p>
           Keyword:
@@ -115,20 +107,14 @@
         <br />
         <br />
         <p>
-          Number of Results(min.10): 
-          <input type="number" name="result" min="10" max="100" value="">
-        </p>
-        <br>
-        <br>
-        <p>
           Retweets:
           <input type="checkbox" name="retweet" />
           Replies:
           <input type="checkbox" name="reply" />
         </p>
-        <br>
+        <br />
         <p>
-          <input type="submit" value="Get Tweets" />
+          <input type="submit" value="Get Sentiment" />
         </p>
         <br />
         <br />
