@@ -70,7 +70,7 @@ def get_sentiment():
                     + scale_y_continuous(minor_breaks=NULL)
                     + labs(x='', y='', title='Mean Sentiment Value (Y) vs. Sentiment Kind (X) by Sentiment Kind (Colors)')))
 
-            return render_template('get_sentiment_result.html',
+            return render_template('get-sentiment-result.html',
                                 usernames=usernames,
                                 start_time=start_time,
                                 end_time=end_time,
@@ -82,7 +82,7 @@ def get_sentiment():
                                 )
 
         else:
-            return render_template('get_sentiment_form.html')
+            return render_template('get-sentiment-form.html')
     except: 
         return render_template('oops.html')
 
@@ -136,12 +136,12 @@ def get_tweets():
 
          
 
-            return render_template('get_tweets_result.html',
+            return render_template('get-tweets-result.html',
                                 tweets=tweets,
                                 username1=username1
                                 )
         else:
-            return render_template('get_tweets_form.html')
+            return render_template('get-tweets-form.html')
     except: 
         return render_template('oops.html')
 
@@ -197,13 +197,13 @@ def get_histogram():
                     + scale_y_continuous(minor_breaks=NULL)
                     + labs(x='', y='', title='Frequency of Word (Y) vs. Word Name (X) by Word Name (Colors) and Word Name (Facets)'))
 
-            return render_template('get_histogram_result.html',
+            return render_template('get-histogram-result.html',
                                 most_common_list=most_common_list,
                                 plot=plot,
                                 df_1=df_1,
                                 )
         else:
-            return render_template('get_histogram_form.html')
+            return render_template('get-histogram-form.html')
     except: 
         return render_template('oops.html')
 
